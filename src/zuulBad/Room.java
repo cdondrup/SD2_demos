@@ -21,6 +21,8 @@ public class Room
     public Room southExit;
     public Room eastExit;
     public Room westExit;
+    public Room upExit;
+    public Room downExit;
 
     /**
      * Create a room described "description". Initially, it has
