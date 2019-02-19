@@ -47,4 +47,18 @@ public class PhotoPost extends Post
     {
         return caption;
     }
+    
+    /**
+     * Display the details of this post.
+     * 
+     * (Currently: Print to the text terminal. This is simulating display 
+     * in a web browser for now.)
+     */
+    public String toString()
+    {
+        String text = "  [" + filename + "]"  + '\n';
+        text += "  " + caption  + '\n';
+        text += super.toString();
+        return text;
+    }
 }

@@ -35,4 +35,17 @@ public class MessagePost extends Post
         return message;
     }
     
+    /**
+     * Display the details of this post.
+     * 
+     * (Currently: Print to the text terminal. This is simulating display 
+     * in a web browser for now.)
+     */
+    public String toString()
+    {
+        String text = message  + '\n';
+        text += super.toString();
+        return text;
+    }
+    
 }

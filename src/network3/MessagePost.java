@@ -43,7 +43,7 @@ public class MessagePost extends Post
      */
     public void display()
     {
-    	super.display();
         System.out.println(message);
+        super.display();
     }
 }

@@ -18,6 +18,7 @@ public class StartNetwork
 		
 		news.addPost( message );
 		news.addPost( photo );
+		
 		news.show();
 	}
 	

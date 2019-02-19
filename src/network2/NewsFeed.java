@@ -25,7 +25,7 @@ public class NewsFeed
      */
     public NewsFeed()
     {
-        posts = new ArrayList<Post>();
+        posts = new ArrayList<>();
     }
 
     /**
@@ -45,9 +45,9 @@ public class NewsFeed
      */
     public void show()
     {
-        // display all posts
+    	        // display all photos
         for(Post post : posts) {
-            post.display();
+            System.out.println(post);
             System.out.println();   // empty line between posts
         }
     }
