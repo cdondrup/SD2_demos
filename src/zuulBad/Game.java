@@ -99,9 +99,6 @@ public class Game
         if(currentRoom.westExit != null) {
             System.out.print("west ");
         }
-        if(currentRoom.upExit != null) {
-            System.out.print("up ");
-        }
         System.out.println();
     }
 
