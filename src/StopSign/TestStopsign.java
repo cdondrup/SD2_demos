@@ -1,28 +1,64 @@
 package StopSign;
 import java.awt.event.*;
+import java.util.Random;
 import java.awt.*;
 import javax.swing.*;
 
-class Stopsign extends JFrame {
-	JLabel l;
-	JButton sb, gb;
+class Stopsign extends JFrame implements ActionListener {
+	private JLabel l;
+	private JButton sb;
 	boolean isStopped = false;
-	// For stop go: add panel 1x2
 
 	public Stopsign() {
 		setLayout(new GridLayout(2, 1));
 		Font f = new Font("Serif", Font.ITALIC, 36);
-
-		// add label (green, opaque)
+		l = new JLabel();
+		l.setOpaque(true);
+		l.setBackground(Color.GREEN);
+		add(l);
 		
-		// add STOP button (font, white, opaque)
+		JPanel p = new JPanel();
+		p.setLayout(new GridLayout(1, 2));
+		
+		sb = new JButton("Stop");
+		sb.addActionListener(this);
+		sb.setFont(f);
+		add(sb);
+//		
+//		gb = new JButton("Go");
+//		gb.addActionListener(this);
+//		gb.setFont(f);
+//		gb.setEnabled(false);
+//		p.add(gb);
 
-		// add action listener
-
-
+//		add(p);
 	}
 
-	// Add actionPerformed that sets color to red
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		if(e.getSource()==sb) {
+			if(isStopped) {
+				l.setBackground(Color.GREEN);
+				sb.setText("Stop");
+				isStopped = false;
+			} else {
+				l.setBackground(Color.red);
+				sb.setText("Go");
+				isStopped = true;
+			}
+		}
+		
+//		if(e.getSource() == sb) {
+//			l.setBackground(Color.red);
+//			gb.setEnabled(true);
+//			sb.setEnabled(false);
+//		}
+//		if(e.getSource() == gb) {
+//			l.setBackground(Color.green);
+//			gb.setEnabled(false);
+//			sb.setEnabled(true);
+//		}
+	}
 
 }
 

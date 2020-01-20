@@ -10,8 +10,9 @@ public class PhoneBook {
 		phoneBook.put("Charles Nguyen", "(531) 9392 4587");
 		phoneBook.put("Lisa Jones", "(402) 4536 4674");
 		phoneBook.put("William H. Smith", "(998) 5488 0123");
+		phoneBook.put("test", "555");
 
-		String phoneNumber = phoneBook.get("Lisa Jones");
+		String phoneNumber = phoneBook.get("test");
 		System.out.println(phoneNumber);
 
 	}
