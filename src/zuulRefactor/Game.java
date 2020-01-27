@@ -1,4 +1,4 @@
-package zuulBetter;
+package zuulRefactor;
 
 
 /**
@@ -104,22 +104,26 @@ public class Game
     private boolean processCommand(Command command) 
     {
         boolean wantToQuit = false;
-
-        if(command.isUnknown()) {
-            System.out.println("I don't know what you mean...");
+        CommandWord commandWord = command.getCommandWord();
+        
+        switch(commandWord) {
+        case GO:
+        	goRoom(command);
+        	break;
+        case QUIT:
+        	wantToQuit = quit(command);
+        	break;
+        case HELP:
+        	printHelp();
+        	break;
+        case UNKNOWN:
+        	System.out.println("I don't know what you mean...");
             return false;
+        case TEST:
+        	 
+        	break;
         }
 
-        String commandWord = command.getCommandWord();
-        if (commandWord.equals("help")) {
-            printHelp();
-        }
-        else if (commandWord.equals("go")) {
-            goRoom(command);
-        }
-        else if (commandWord.equals("quit")) {
-            wantToQuit = quit(command);
-        }
         // else command not recognised.
         return wantToQuit;
     }

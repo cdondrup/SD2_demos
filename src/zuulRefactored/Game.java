@@ -116,9 +116,6 @@ public class Game
         case QUIT:
         	wantToQuit = true;
         	break;
-        case TEST:
-        	System.out.println("This works");
-        	break;
         case UNKNOWN:
         	System.out.println("I don't know what you mean...");
             return false;

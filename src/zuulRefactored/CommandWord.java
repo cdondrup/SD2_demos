@@ -1,7 +1,7 @@
 package zuulRefactored;
 
 public enum CommandWord {
-	GO("go"), QUIT("quit"), HELP("help"), UNKNOWN("?"), TEST("test");
+	GO("go"), QUIT("quit"), HELP("help"), UNKNOWN("?");
 	
 	private String command;
 	

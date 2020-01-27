@@ -5,9 +5,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
-import zuulRefactored.Command;
-import zuulRefactored.CommandWord;
-import zuulRefactored.CommandWords;
+import zuulRefactor.Command;
+import zuulRefactor.CommandWords;
 
 class zuulTest {
 	private static CommandWords commandWords;
@@ -38,20 +37,20 @@ class zuulTest {
 	
 	@Test
 	void notIsUnknownTest() {
-		Command command = new Command(commandWords.getCommandWord("foo"), null);
+		Command command = new Command(commandWords.getCommandWord("go"), null);
 		assertFalse(command.isUnknown());
 	}
 	
 	@Test
 	void getCommandWordTest() {
 		Command command = new Command(commandWords.getCommandWord("go"), null);
-		assertEquals(command.getCommandWord(), CommandWord.GO);
+		assertEquals(command.getCommandWord(), commandWords.getCommandWord("go"));
 	}
 	
 	@Test
 	void notGetCommandWordTest() {
 		Command command = new Command(commandWords.getCommandWord("foo"), null);
-		assertNotEquals(command.getCommandWord(), CommandWord.GO);
+		assertNotEquals(command.getCommandWord(), commandWords.getCommandWord("go"));
 	}
 
 }
