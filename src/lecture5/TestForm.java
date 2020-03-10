@@ -1,4 +1,4 @@
-package Lecture6;
+package lecture5;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.*;
